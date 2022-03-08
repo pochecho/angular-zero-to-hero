@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  @Input('current-date') currentDate!: Date;
 
-  constructor() { }
+  @Output() change = new EventEmitter();
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  sendToParent(currentDate: Date): void {
+    this.change.emit(currentDate);
   }
-
 }

@@ -1,2 +1,3 @@
-<footer>@Copyright 2022</footer>
+<footer *ngIf="currentDate">@Copyright {{currentDate}}</footer>
+<button (click)="sendToParent(currentDate)">Ver más</button>
 <span>Adgeci</span>

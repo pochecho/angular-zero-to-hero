@@ -1,0 +1,3 @@
+<ng-container *ngIf="people">
+  <p (click)="navigate(person)" *ngFor="let person of people">{{ person.name }}</p>
+</ng-container>
