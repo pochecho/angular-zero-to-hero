@@ -1,3 +1,8 @@
 <ng-container *ngIf="people">
-  <p (click)="navigate(person)" *ngFor="let person of people">{{ person.name }}</p>
+  <p (click)="navigate(person)" *ngFor="let person of people">
+    {{ person.name.title }} {{ person.name.first }}
+  </p>
 </ng-container>
+<div *ngIf="!people">
+  <p>Loading</p>
+</div>

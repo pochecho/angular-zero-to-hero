@@ -6,10 +6,20 @@ import { ComponentsModule } from '../components/components.module';
 import { WipComponent } from './wip/wip.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { FavoritesElementsComponent } from './home/favorites-elements/favorites-elements.component';
+import { RouterModule } from '@angular/router';
+import { ServicesModule } from '../services/services.module';
 
 @NgModule({
-  declarations: [AboutUsComponent, HomeComponent, WipComponent, PersonListComponent, PersonDetailComponent],
-  imports: [CommonModule, ComponentsModule],
+  declarations: [
+    AboutUsComponent,
+    HomeComponent,
+    WipComponent,
+    PersonListComponent,
+    PersonDetailComponent,
+    FavoritesElementsComponent,
+  ],
+  imports: [CommonModule, ComponentsModule, RouterModule, ServicesModule],
   exports: [ComponentsModule],
 })
 export class PagesModule {}

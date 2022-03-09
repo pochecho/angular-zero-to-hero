@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IPersonModel } from 'src/app/models/person.model';
+import { PersonService } from 'src/app/services/person.service';
 
 @Component({
   selector: 'app-person-list',
@@ -7,33 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./person-list.component.scss'],
 })
 export class PersonListComponent implements OnInit {
-  constructor(private router: Router) {
+  constructor(private router: Router, private personService: PersonService) {
     this.getData();
   }
 
-  people!: any[];
+  people!: IPersonModel[];
 
   ngOnInit(): void {}
 
   navigate(person: any) {
-    this.router.navigate(['person/' + person.id]);
+    this.router.navigate(['person/' + person.id.name]);
   }
   getData() {
-    this.people = [
-      {
-        id: 1,
-        name: 'Felipe',
-      },
-
-      {
-        id: 2,
-        name: 'Darwin',
-      },
-
-      {
-        id: 3,
-        name: 'Alejandro',
-      },
-    ];
+    this.personService.getPeople().then(async (response: Response) => {
+      console.log(response);
+      const data = await response.json();
+      this.people = data['results'];
+    });
   }
 }
