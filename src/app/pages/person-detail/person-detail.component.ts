@@ -11,9 +11,9 @@ export class PersonDetailComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((value) => {
-      this.person = this.getPersonById(value.id - 1);
-    });
+    // this.activatedRoute.params.subscribe((value) => {
+    //   this.person = this.getPersonById(value.id - 1);
+    // });
   }
 
   getPersonById(id: number) {

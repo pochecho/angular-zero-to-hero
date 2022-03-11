@@ -1,6 +1,8 @@
-<span>{{ person.id }}</span>
-<span>
-  <strong>
-    {{ person.name }}
-  </strong>
-</span>
+<ng-container *ngIf="person">
+  <span>{{ person.id }}</span>
+  <span>
+    <strong>
+      {{ person.name }}
+    </strong>
+  </span>
+</ng-container>
