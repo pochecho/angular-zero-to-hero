@@ -23,6 +23,7 @@ export class PersonListComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.unsubscribe();
+    
   }
 
   people!: IPersonModel[];
