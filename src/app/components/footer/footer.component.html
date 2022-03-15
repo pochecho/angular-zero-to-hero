@@ -1,3 +1,7 @@
-<footer *ngIf="currentDate">@Copyright {{currentDate}}</footer>
+<footer *ngIf="currentDate">@Copyright {{ currentDate }}</footer>
 <button (click)="sendToParent(currentDate)">Ver más</button>
-<span>Adgeci</span>
+<span
+  >Adgeci
+  <ng-content select=".title"></ng-content>
+</span>
+<ng-content select=".city"></ng-content>
